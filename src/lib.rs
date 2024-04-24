@@ -1,3 +1,12 @@
+// TODO: If we ever use this crate, then move the following back to camigo_helpers::core_wrap_struct or similar.
+//
+// NO cache-specific benefit for [camigo::Slice]'s cache-aware methods (`binary_search_cf`
+// etc.) themselves!
+//
+// Usable for BENCHMARKING. It allows us to run slice's `binary_search`:
+// `<[$item_type]>::binary_search(self, given)` using the full comparison, and benchmark
+// against cache-aware [camigo::Slice]'s `binary_search_cf` etc.
+
 use crate::COrd;
 use core::cmp::Ordering;
 #[cfg(feature = "hint_assert_unchecked")]
